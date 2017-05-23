@@ -1,0 +1,29 @@
+'''
+Max Dulin
+Jacob Krantz
+Assignment 14
+Linear Regression
+'''
+
+
+data = load('data.csv')
+#to get the column into a single piece of data; column 1
+Xin = data(:,2);
+#to get the column into a single piece of data; column 2
+Y = data(:,1);
+plot(Xin,Y,'rx','MarkerSize',10);
+
+for var = 1000
+  #to get the length of X
+  i = length(Xin);
+  #set a column of all 1's next to X
+  X = [ones(i,1) Xin];
+
+  #runs through linear regression.
+  #(X transpose * X) * (X tranpose * Y) Need the pinv to take the inverse; otherwise the numbers are too small
+  theta = (pinv(X'*X))*X'*Y
+ endfor
+#plots the graph
+hold on;
+plot(X(:,2),X*theta,'.-');
+hold off;

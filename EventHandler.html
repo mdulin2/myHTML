@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <script type = "text/javascript">
+    function person(name,age){
+      this.name = name;
+      this.age = age;
+      //don't use paran's here so that the object knows what functions it goes with
+      this.yearsLeftUntilRetire = yearsLeft;
+    }
+    //owned by the person function in the constructor
+    function yearsLeft(){
+      var numYears = 65 - this.age;
+      return numYears;
+    }
+    var bucky = new person("Bucky Robertston",24);
+    var taylor = new person("Taylor Swift",20);
+
+
+
+    //resturant { name: "jamba juice", food: false}
+  </script>
+</head>
+
+<body onUnload = "alert('Goodbye')">
+before they rock the body, body body.
+<script type = "text/javascript">
+document.write(taylor.yearsLeftUntilRetire());
+</script>
+<form>
+
+
+  <a href = "http://thenewboston.com" onMouseOver = "alert('Game time')"> Hover over me </a>
+  <input type = "button" value = "touch me" onClick="alert('hey now')";/>
+</form>
+
+</body>
+
+
+
+</html>
